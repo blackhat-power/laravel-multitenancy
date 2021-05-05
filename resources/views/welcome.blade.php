@@ -20,6 +20,7 @@
             }
         </style>
     </head>
+
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
@@ -44,7 +45,9 @@
                         </g>
                     </svg>
                 </div>
-
+                @if( \Spatie\Multitenancy\Models\Tenant::checkCurrent())
+                    <p style="color: deeppink"> {{app('currentTenant')->name}}</p>
+                @endif
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
