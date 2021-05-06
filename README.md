@@ -7,13 +7,13 @@
 <p>composer require "spatie/laravel-multitenancy:^1.0"<p>
 **PUBLISHING THE CONFIG FILE**
 *You must publish the config file:*
-<div>
+
     
  
 php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"</div>
 
 **This is the default content of the config file that will be published at config/multitenancy.php:**
-<div>
+
 <?php
 use Illuminate\Broadcasting\BroadcastEvent;
 use Illuminate\Events\CallQueuedListener;
