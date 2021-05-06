@@ -1,15 +1,15 @@
-<h1> THe basic installation steps of the spatie laravel multitenancy package  </h1>
+**THe basic installation steps of the spatie laravel multitenancy package**
 
 <p>This package can be installed via composer:<p>
 
 <p>composer require "spatie/laravel-multitenancy:^1.0"<p>
 
-<h1>#PUBLISHING THE CONFIG FILE</h1>
-<div><i>You must publish the config file:<i>
+**PUBLISHING THE CONFIG FILE**
+*You must publish the config file:*
 php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"</div>
 
 
-<em>#This is the default content of the config file that will be published at config/multitenancy.php:</em>
+**This is the default content of the config file that will be published at config/multitenancy.php:**
 <div>
 <?php
 use Illuminate\Broadcasting\BroadcastEvent;
@@ -107,7 +107,7 @@ return [
 </div>
 
 
-<h1>#PROTECTING AGAINST CROSS TENANT ABUSE</h1>
+**#PROTECTING AGAINST CROSS TENANT ABUSE**
 <div>
 To prevent users from a tenant abusing their session to access another tenant, you must use the Spatie\Multitenancy\Http\Middleware\EnsureValidTenantSession middleware on all tenant-aware routes.</div>
 
@@ -115,7 +115,7 @@ If all your application routes are tenant-aware, you can add it to your global m
 
 
 // in `app\Http\Kernel.php`
-<em>
+```php
 protected $middlewareGroups = [
     'web' => [
         // ...
@@ -123,12 +123,12 @@ protected $middlewareGroups = [
         \Spatie\Multitenancy\Http\Middleware\EnsureValidTenantSession::class,
     ]
 ];
-<em>
+```
     
-<i>If only some routes are tenant-aware, create a new middleware group:</i>
+**If only some routes are tenant-aware, create a new middleware group:**
 
-<div style="background-color:'brown'">
 // in `app\Http\Kernel.php`
+```php
 protected $middlewareGroups = [
     // ...
     'tenant' => [
@@ -136,6 +136,7 @@ protected $middlewareGroups = [
         \Spatie\Multitenancy\Http\Middleware\EnsureValidTenantSession::class,
     ]
 ];
+```php
 </div>
 
 Then apply the group to the appropriate routes:
