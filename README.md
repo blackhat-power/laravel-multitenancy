@@ -6,9 +6,11 @@
 
 **PUBLISHING THE CONFIG FILE**
 *You must publish the config file:*
-php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"</div>
+<div>
+ ```php
+php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"</div> ```
 
-
+```php
 **This is the default content of the config file that will be published at config/multitenancy.php:**
 <div>
 <?php
