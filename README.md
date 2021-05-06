@@ -1,4 +1,5 @@
-**THe basic installation steps of the spatie laravel multitenancy package**
+```php
+**THe basic installation steps of the spatie laravel multitenancy package:upside_down_face:**
 
 <p>This package can be installed via composer:<p>
 
@@ -7,10 +8,9 @@
 **PUBLISHING THE CONFIG FILE**
 *You must publish the config file:*
 <div>
- ```php
-php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"</div> ```
+ 
+php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"</div>
 
-```php
 **This is the default content of the config file that will be published at config/multitenancy.php:**
 <div>
 <?php
@@ -117,7 +117,7 @@ If all your application routes are tenant-aware, you can add it to your global m
 
 
 // in `app\Http\Kernel.php`
-```php
+
 protected $middlewareGroups = [
     'web' => [
         // ...
@@ -128,9 +128,8 @@ protected $middlewareGroups = [
 ```
     
 **If only some routes are tenant-aware, create a new middleware group:**
-
-// in `app\Http\Kernel.php`
 ```php
+// in `app\Http\Kernel.php`
 protected $middlewareGroups = [
     // ...
     'tenant' => [
@@ -138,7 +137,7 @@ protected $middlewareGroups = [
         \Spatie\Multitenancy\Http\Middleware\EnsureValidTenantSession::class,
     ]
 ];
-```php
+
 </div>
 
 Then apply the group to the appropriate routes:
