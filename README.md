@@ -3,14 +3,14 @@
 **THe basic installation steps of the spatie laravel multitenancy package:upside_down_face:**
 ```php
 
-<p>This package can be installed via composer:<p>
-<p>composer require "spatie/laravel-multitenancy:^1.0"<p>
+This package can be installed via composer:
+composer require "spatie/laravel-multitenancy:^1.0"
 **PUBLISHING THE CONFIG FILE**
 *You must publish the config file:*
 
     
  
-php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"</div>
+php artisan vendor:publish --provider="Spatie\Multitenancy\MultitenancyServiceProvider" --tag="multitenancy-config"
 
 **This is the default content of the config file that will be published at config/multitenancy.php:**
 
@@ -107,11 +107,9 @@ return [
     ],
 ];
 
-</div>
 
 
 **#PROTECTING AGAINST CROSS TENANT ABUSE**
-<div>
 To prevent users from a tenant abusing their session to access another tenant, you must use the Spatie\Multitenancy\Http\Middleware\EnsureValidTenantSession middleware on all tenant-aware routes.</div>
 
 If all your application routes are tenant-aware, you can add it to your global middleware in app\Http\Kernel.php
@@ -139,7 +137,6 @@ protected $middlewareGroups = [
     ]
 ];
 
-</div>
 
 Then apply the group to the appropriate routes:
 // in a routes file
