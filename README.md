@@ -1,8 +1,9 @@
 
+
 **THe basic installation steps of the spatie laravel multitenancy package:upside_down_face:**
+```php
 
 <p>This package can be installed via composer:<p>
-```php
 <p>composer require "spatie/laravel-multitenancy:^1.0"<p>
 **PUBLISHING THE CONFIG FILE**
 *You must publish the config file:*
